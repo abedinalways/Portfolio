@@ -2,10 +2,10 @@ import React from 'react';
 
 const AboutMe = () => {
   return (
-    <div className='flex flex-col justify-center gap-4 items-center font-[Suse] font-extrabold mt-6'>
-      <h1 className='bg-purple-600 rounded-xl p-2 text-white'>My Programming Journey</h1>
+    <div className='flex flex-col justify-center gap-4 items-center font-[Suse] font-extrabold mt-6' id='about'>
+      <h1 className='bg-gray-800 rounded-xl p-2 text-white'>My Programming Journey</h1>
       <h1 className='text-4xl text-white '>About Me</h1>
-      <h1 className='text-4xl text-white mt-8'>Passionate Developer from Bangladesh</h1>
+      <h1 className='text-4xl text-white mt-8 text-center'>Passionate Developer from Bangladesh</h1>
       <p className='text-lg text-white max-w-xl text-center mt-3'>
         Hi! I am Sheikh Minhaul Abedin.
         I am a passionate developer from Bangladesh with a strong interest in

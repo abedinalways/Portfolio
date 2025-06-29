@@ -5,7 +5,7 @@ import image from '../assets/profile-pic.png'
 const Banner = () => {
   return (
     <div>
-      <div className="hero bg-purple-200 rounded-xl md:min-h-[500px]">
+      <div className="hero  rounded-xl md:min-h-[500px]">
         <Background
           speed={0.5}
           squareSize={40}

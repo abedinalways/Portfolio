@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 const BeyondCoding = () => {
   return (
-    <div className="font-[sora] min-h-screen py-12 px-4 sm:px-6 lg:px-8">
+    <div className="font-[sora]  py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-8">
         {/* Left Section */}
         <motion.div
