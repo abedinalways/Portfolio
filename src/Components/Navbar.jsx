@@ -1,9 +1,12 @@
 import React from 'react';
 import { IoIosArrowDropdownCircle } from 'react-icons/io';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import logo from '../assets/logo.png';
 const Navbar = () => {
-   
+  const navigate = useNavigate();
+  const handleSkill = () => {
+    navigate('/skill')
+  }
   const dropdownItems = (
     <div className="dropdown dropdown-hover">
       <div tabIndex={0} role="button" className="btn m-1">
@@ -39,7 +42,7 @@ const Navbar = () => {
         <div className="navbar-center">
           <div className=" flex justify-center items-center gap-6 text-lg">
             <Link>Projects</Link>
-            <Link>Skills</Link>
+            <Link onClick={handleSkill()}>Skills</Link>
             <Link>Education</Link>
             <Link>About Me</Link>
           </div>

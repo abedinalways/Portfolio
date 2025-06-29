@@ -4,7 +4,7 @@ import Navbar from '../Components/Navbar';
 
 const Root = () => {
   return (
-    <div className='relative px-10'>
+    <div className='relative px-10 bg-gray-600'>
       <Navbar/>
       <Outlet/>
     </div>
