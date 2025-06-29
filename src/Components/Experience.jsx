@@ -36,7 +36,7 @@ const experiences = [
     icon: 'c-plus-plus-logo',
     rating: 5,
     feedback:
-      "Soriful's C++ programming skills are outstanding. He solved numerous complex algorithmic problems and demonstrated strong logical thinking and problem-solving abilities. His foundation in C++ has greatly enhanced his overall programming expertise.",
+      "Abedin's C++ programming skills are outstanding. He solved numerous complex algorithmic problems and demonstrated strong logical thinking and problem-solving abilities. His foundation in C++ has greatly enhanced his overall programming expertise.",
     responsibilities: [
       'Solved 200+ algorithmic problems and coding challenges using C++, developing strong problem-solving and logical thinking skills.',
       'Implemented complex data structures (arrays, linked lists, trees, graphs) and algorithms (sorting, searching, dynamic programming) efficiently.',

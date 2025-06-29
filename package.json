@@ -16,6 +16,7 @@
     "@react-three/postprocessing": "^3.0.4",
     "@react-three/rapier": "^2.1.0",
     "@tailwindcss/vite": "^4.1.11",
+    "firebase": "^11.9.1",
     "framer-motion": "^12.19.2",
     "gl-matrix": "^3.4.3",
     "gsap": "^3.13.0",
