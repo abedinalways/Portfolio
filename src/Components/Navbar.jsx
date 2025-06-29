@@ -1,12 +1,10 @@
 import React from 'react';
 import { IoIosArrowDropdownCircle } from 'react-icons/io';
-import { Link, useNavigate } from 'react-router';
+import { Link } from 'react-scroll';
 import logo from '../assets/logo.png';
 const Navbar = () => {
-  const navigate = useNavigate();
-  const handleSkill = () => {
-    navigate('/skill')
-  }
+  
+  
   const dropdownItems = (
     <div className="dropdown dropdown-hover">
       <div tabIndex={0} role="button" className="btn m-1">
@@ -41,10 +39,26 @@ const Navbar = () => {
         </div>
         <div className="navbar-center">
           <div className=" flex justify-center items-center gap-6 text-lg">
-            <Link>Projects</Link>
-            <Link onClick={handleSkill()}>Skills</Link>
-            <Link>Education</Link>
-            <Link>About Me</Link>
+            <Link to="skills"
+  smooth={true}
+  duration={500}
+  offset={-70} // if you want to adjust for sticky navbar
+  className="cursor-pointer mx-4 font-semibold text-black hover:text-purple-600 transition">Project</Link>
+            <Link to="skills"
+  smooth={true}
+  duration={500}
+  offset={-70} // if you want to adjust for sticky navbar
+  className="cursor-pointer mx-4 font-semibold text-black hover:text-purple-600 transition">Skill</Link>
+            <Link to="skills"
+  smooth={true}
+  duration={500}
+  offset={-70} // if you want to adjust for sticky navbar
+  className="cursor-pointer mx-4 font-semibold text-black hover:text-purple-600 transition">About Me</Link>
+            <Link to="skills"
+  smooth={true}
+  duration={500}
+  offset={-70} // if you want to adjust for sticky navbar
+  className="cursor-pointer mx-4 font-semibold text-black hover:text-purple-600 transition">Education</Link>
           </div>
         </div>
         <div className="navbar-end">

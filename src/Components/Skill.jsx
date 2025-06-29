@@ -4,7 +4,7 @@ import { FaReact } from 'react-icons/fa';
 const Skill = () => {
   
   return (
-    <div className="relative w-full overflow-x-auto py-10 font-[sora]">
+    <div className="relative w-full overflow-x-auto py-10 font-[sora]" id='skills'>
       <div className="flex items-center justify-start space-x-6 px-4">
         {/* Timeline Line */}
         <div className="absolute left-0 right-0 h-1 bg-gradient-to-r from-purple-500 to-blue-500 top-1/2 transform -translate-y-1/2 z-0"></div>
