@@ -68,7 +68,7 @@ const Navbar = () => {
           </div>
         </div>
         <div className="navbar-center hidden md:flex">
-          <div className=" flex justify-center items-center gap-6 text-lg">
+          <div className=" flex justify-center items-center md:gap-2 lg:gap-6 text-lg">
             <Link
               to="project"
               smooth={true}
@@ -115,7 +115,7 @@ const Navbar = () => {
             offset={-70}
             className="cursor-pointer"
           >
-            <button className="btn bg-purple-800 text-white w-44 text-center text-md font-bold rounded-xl font-[sora]">
+            <button className="btn bg-purple-800 text-white w-35 text-center text-md font-bold rounded-xl font-[sora]">
               Contact Me
             </button>
           </Link>

@@ -36,7 +36,7 @@ const experiences = [
     icon: 'c-plus-plus-logo',
     rating: 5,
     feedback:
-      "Soriful's C++ programming skills are outstanding. He solved numerous complex algorithmic problems and demonstrated strong logical thinking and problem-solving abilities. His foundation in C++ has greatly enhanced his overall programming expertise.",
+      "Abedin's C++ programming skills are outstanding. He solved numerous complex algorithmic problems and demonstrated strong logical thinking and problem-solving abilities. His foundation in C++ has greatly enhanced his overall programming expertise.",
     responsibilities: [
       'Solved 200+ algorithmic problems and coding challenges using C++, developing strong problem-solving and logical thinking skills.',
       'Implemented complex data structures (arrays, linked lists, trees, graphs) and algorithms (sorting, searching, dynamic programming) efficiently.',
@@ -51,23 +51,23 @@ const Experience = () => {
   return (
     <>
       <div className="text-center mb-8 mt-10 font-[sora]">
-              <motion.span
-                className="text-xs font-semibold bg-gray-800 text-white  px-3 py-1 rounded-full mb-2 inline-block"
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 }}
-              >
-                Technologies I Master
-              </motion.span>
-              <motion.h2
-                className="text-5xl text-white md:text-5xl font-bold"
-                initial={{ opacity: 0, y: -30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 }}
-              >
-                My Technical Skills & Expertise
-              </motion.h2>
-            </div>
+        <motion.span
+          className="text-xs font-semibold bg-gray-800 text-white  px-3 py-1 rounded-full mb-2 inline-block"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+        >
+          💼My Career Overview
+        </motion.span>
+        <motion.h2
+          className="text-5xl text-white md:text-5xl font-bold"
+          initial={{ opacity: 0, y: -30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4 }}
+        >
+          Professional Work Experience
+        </motion.h2>
+      </div>
       <section className=" text-white py-16 px-4 md:px-10 space-y-20">
         {experiences.map((exp, idx) => (
           <div

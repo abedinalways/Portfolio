@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import { motion } from 'framer-motion';
 import Lottie from 'lottie-react';
-import messageAnimation from '../assets/message.json'; 
+import messageAnimation from '../assets/message.json';
 
 const Contact = () => {
   const form = useRef();
@@ -11,11 +11,7 @@ const Contact = () => {
     e.preventDefault();
 
     emailjs
-      .sendForm(
-        'ser service_ksw9t5i',
-        'template_9lcf0yq',
-        'Egph4_8LTZE8ncx-7' 
-      )
+      .sendForm('ser service_ksw9t5i', 'template_9lcf0yq', 'Egph4_8LTZE8ncx-7')
       .then(
         result => {
           alert('Message sent successfully!');
@@ -29,7 +25,7 @@ const Contact = () => {
   };
 
   return (
-    <div id='contact'>
+    <div id="contact">
       <motion.h2
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

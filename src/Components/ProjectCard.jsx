@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import img01 from '../assets/QuickLance.png';
+
 import { useState } from 'react';
 
 const ProjectCard = () => {
@@ -100,9 +100,26 @@ const ProjectCard = () => {
 
   return (
     <div className="font-[sora] py-10 px-4 sm:px-6 lg:px-8" id='project'>
-      <h2 className="text-center text-5xl text-white font-[sora] font-extrabold mb-4">
-        My Project
-      </h2>
+      <div className='flex flex-col justify-center gap-4 items-center font-[Suse] font-extrabold mt-6' id='about'>
+            <div className="text-center mb-8 mt-10 font-[sora]">
+                    <motion.span
+                      className="text-xs font-semibold bg-gray-800 text-white  px-3 py-1 rounded-full mb-2 inline-block"
+                      initial={{ opacity: 0, y: -20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.2 }}
+                    >
+                      💪what i have build
+                    </motion.span>
+                    <motion.h2
+                      className="text-5xl text-white md:text-5xl font-bold"
+                      initial={{ opacity: 0, y: -30 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.4 }}
+                    >
+                      My Projects
+                    </motion.h2>
+        </div>
+        </div>
       <div className="max-w-7xl mx-auto">
         {projects.map((project, index) => (
           <motion.div
