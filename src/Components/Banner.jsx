@@ -1,8 +1,8 @@
 import React from 'react';
 import { Background } from './Background';
 import Text from './Text';
-import image from '../assets/profile-pic.png'
 import { FaDownload } from 'react-icons/fa';
+import img from '../assets/profile-pic.png'
 const Banner = () => {
   return (
     <div>
@@ -44,15 +44,44 @@ const Banner = () => {
               </span>
               , a developer based in Bangladesh with a passion for Creation.
             </h2>
-            <button className="btn bg-purple-800 text-white mt-6 w-44 text-center text-2xl font-bold rounded-xl font-[sora]">
+            <a
+              href="/public/Sheikh Minhajul Abedin.pdf"
+              download="Sheikh_Minhajul_Abedin_Resume.pdf"
+              className="btn bg-purple-800 text-white mt-6 w-44 text-center text-2xl font-bold rounded-xl font-[sora] flex items-center justify-center"
+            >
               Resume
-              <FaDownload />
-            </button>
+              <FaDownload className="ml-2" />
+            </a>
+            <div className="flex gap-2 mt-3 items-center">
+              <a href="https://github.com/abedinalways" target="_">
+                <img
+                  width="48"
+                  height="48"
+                  src="https://img.icons8.com/color/48/github--v1.png"
+                  alt="github--v1"
+                />
+              </a>
+              <a href="https://www.linkedin.com/in/sheikh-minhajul-abedin-bb51162a4/">
+                <img
+                  width="48"
+                  height="48"
+                  src="https://img.icons8.com/color/48/linkedin.png"
+                  alt="linkedin"
+                />
+              </a>
+              <a href="https://www.facebook.com/Abedin.always">
+              
+              <img
+                width="48"
+                height="48"
+                src="https://img.icons8.com/color/48/facebook-new.png"
+                alt="facebook-new"
+              />
+              </a>
+            
+            </div>
           </div>
-          <img
-            src={image}
-            className="md:max-w-sm rounded-full shadow-2xl md:ml-10"
-          />
+          <img src={img} alt="" className="w-sm rounded-full" />
         </div>
       </div>
     </div>
