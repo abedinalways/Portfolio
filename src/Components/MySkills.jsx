@@ -201,7 +201,7 @@ const MySkills = () => {
               ))}
               <button
                 onClick={() => toggleExpand(cat.title)}
-                className="mt-auto bg-blue-800 hover:bg-blue-900 text-white text-sm py-2 rounded-full"
+                className="mt-auto bg-purple-800 hover:bg-purple-600 text-white text-sm py-2 rounded-full"
               >
                 {expanded[cat.title]
                   ? 'See Less'

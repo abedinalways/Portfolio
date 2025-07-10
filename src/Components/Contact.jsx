@@ -100,7 +100,7 @@ const Contact = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.6, duration: 0.8 }}
-                className="w-full bg-blue-400 hover:bg-blue-500 text-white p-2 rounded-md font-semibold transition duration-300"
+                className="w-full bg-purple-800 hover:bg-purple-600 text-white p-2 rounded-md font-semibold transition duration-300"
               >
                 SEND MESSAGE
               </motion.button>

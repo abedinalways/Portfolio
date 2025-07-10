@@ -11,7 +11,7 @@ const Banner = () => {
           speed={0.4}
           squareSize={40}
           direction="diagonal"
-          borderColor="#9B177E"
+          borderColor="#00000"
           hoverFillColor="#222"
         />
         <div className="hero-content flex-col lg:flex-row justify-between md:gap-10 mx-auto">
@@ -45,7 +45,7 @@ const Banner = () => {
               , a developer based in Bangladesh with a passion for Creation.
             </h2>
             <a
-              href="/public/Sheikh Minhajul Abedin.pdf"
+              href="/Sheikh Minhajul Abedin.pdf"
               download="Sheikh_Minhajul_Abedin_Resume.pdf"
               className="btn bg-purple-800 text-white mt-6 w-44 text-center text-2xl font-bold rounded-xl font-[sora] flex items-center justify-center"
             >

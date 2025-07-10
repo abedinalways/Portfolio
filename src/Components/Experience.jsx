@@ -95,13 +95,13 @@ const Experience = () => {
 
             {/* Right Timeline */}
             <motion.div
-              className="relative pl-10 border-l-4 border-blue-600"
+              className="relative pl-10 border-l-4 border-purple-600"
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <div className="absolute -left-6 top-0 bg-blue-900 w-12 h-12 flex items-center justify-center rounded-full">
+              <div className="absolute -left-6 top-0 bg-purple-900 w-12 h-12 flex items-center justify-center rounded-full">
                 <img
                   src={`https://img.icons8.com/color/48/${exp.icon}.png`}
                   alt={exp.role}

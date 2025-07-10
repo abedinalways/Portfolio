@@ -14,7 +14,7 @@ const Skill = () => {
 
         {/* Skill 1 */}
         <motion.div
-          className="relative bg-teal-900 h-60 w-70  text-center text-xl font-bold text-white p-4 rounded-xl shadow-lg min-w-[200px] z-10"
+          className="relative bg-black h-60 w-70  text-center text-xl font-bold text-white p-4 rounded-xl shadow-lg min-w-[200px] z-10"
           initial={{ opacity: 0, x: -100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
@@ -33,7 +33,7 @@ const Skill = () => {
 
         {/* Skill 2 */}
         <motion.div
-          className="relative  h-60 w-70  text-center text-xl font-bold  bg-purple-900 text-white p-4 rounded-xl shadow-lg min-w-[200px] z-10"
+          className="relative  h-60 w-70  text-center text-xl font-bold  bg-black text-white p-4 rounded-xl shadow-lg min-w-[200px] z-10"
           initial={{ opacity: 0, x: -100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
@@ -52,7 +52,7 @@ const Skill = () => {
 
         {/* Skill 3 */}
         <motion.div
-          className="relative bg-brown-900  h-60 w-70   text-center text-xl font-bold text-white bg-yellow-900 p-4 rounded-xl shadow-lg min-w-[200px] z-10"
+          className="relative bg-brown-900  h-60 w-70   text-center text-xl font-bold text-white bg-black p-4 rounded-xl shadow-lg min-w-[200px] z-10"
           initial={{ opacity: 0, x: -100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: 'easeOut', delay: 0.4 }}
@@ -71,7 +71,7 @@ const Skill = () => {
 
         {/* Skill 4 */}
         <motion.div
-          className="relative bg-blue-600  h-60 w-70   text-center text-xl font-bold text-white p-4 rounded-xl shadow-lg min-w-[200px] z-10"
+          className="relative bg-black  h-60 w-70   text-center text-xl font-bold text-white p-4 rounded-xl shadow-lg min-w-[200px] z-10"
           initial={{ opacity: 0, x: -100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: 'easeOut', delay: 0.6 }}

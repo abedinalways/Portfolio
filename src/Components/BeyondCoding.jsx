@@ -27,28 +27,28 @@ const BeyondCoding = () => {
           </p>
           <div className="flex flex-wrap gap-4">
             <motion.div
-              className="btn bg-blue-700 hover:bg-blue-600 text-white"
+              className="btn bg-purple-800 hover:bg-purple-600 text-white"
               whileHover={{ scale: 1.1 }}
               transition={{ type: 'spring', stiffness: 300 }}
             >
               Problem Solver
             </motion.div>
             <motion.div
-              className="btn bg-purple-700 hover:bg-purple-600 text-white"
+              className="btn bg-purple-800 hover:bg-purple-600 text-white"
               whileHover={{ scale: 1.1 }}
               transition={{ type: 'spring', stiffness: 300 }}
             >
               Team Player
             </motion.div>
             <motion.div
-              className="btn bg-green-700 hover:bg-green-600 text-white"
+              className="btn bg-purple-800 hover:bg-purple-600 text-white"
               whileHover={{ scale: 1.1 }}
               transition={{ type: 'spring', stiffness: 300 }}
             >
               Fast Learner
             </motion.div>
             <motion.div
-              className="btn bg-brown-700 hover:bg-brown-600 text-red-400"
+              className="btn bg-purple-800 hover:bg-purple-600 text-white"
               whileHover={{ scale: 1.1 }}
               transition={{ type: 'spring', stiffness: 300 }}
             >
@@ -59,7 +59,7 @@ const BeyondCoding = () => {
 
         {/* Right Section */}
         <motion.div
-          className="w-full lg:w-1/2 bg-gray-800 p-6 rounded-xl shadow-lg"
+          className="w-full lg:w-1/2 bg-black p-6 rounded-xl shadow-lg"
           initial={{ opacity: 0, x: 100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, ease: 'easeOut', delay: 0.2 }}

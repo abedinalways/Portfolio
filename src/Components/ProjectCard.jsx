@@ -43,7 +43,7 @@ const ProjectCard = () => {
     {
       title: 'StackMind-A Web Blog Platform',
       description:
-        'StackMind is a modern and responsive web blogging platform where users can explore blogs, write and manage their own posts, interact with other users, and bookmark content they love. This repository contains the frontend codebase built using React, styled with Tailwind CSS and DaisyUI, and powered by modern tools like TanStack Query, Axios, and Framer Motion for an engaging user experience.',
+        'StackMind is a Web Blog platform, built with React. It provides a responsive user interface to browse blogs, post content, manage user accounts, and and bookmark content they love. This Project is built with using MERN Stack',
       image: 'https://i.ibb.co/TxM7wyNX/stack-Mind-app.png',
 
       demoLink: 'https://stackmind-auth.web.app/',
@@ -76,7 +76,7 @@ const ProjectCard = () => {
     {
       title: ' Sohay – Mobile Banking Web App',
       description:
-        '💳 Sohay – Mobile Banking Web App Sohay is a modern, secure, and user-friendly Single Page Application (SPA) designed to make mobile banking accessible to everyone, especially users in rural and semi-urban regions. It simplifies financial tasks like bill payments, money transfers, and micro-credit access through an intuitive and responsive interface.',
+        'Sohay is designed to make mobile banking accessible to everyone. It simplifies financial tasks like bill payments, money transfers, and micro-credit access through an intuitive and responsive interface.',
       image: 'https://i.ibb.co/20F8tXpf/sohay-app.png',
 
       demoLink: 'https://sohay-auth.web.app/',
@@ -99,32 +99,35 @@ const ProjectCard = () => {
   ];
 
   return (
-    <div className="font-[sora] py-10 px-4 sm:px-6 lg:px-8" id='project'>
-      <div className='flex flex-col justify-center gap-4 items-center font-[Suse] font-extrabold mt-6' id='about'>
-            <div className="text-center mb-8 mt-10 font-[sora]">
-                    <motion.span
-                      className="text-xs font-semibold bg-gray-800 text-white  px-3 py-1 rounded-full mb-2 inline-block"
-                      initial={{ opacity: 0, y: -20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.2 }}
-                    >
-                      💪what i have build
-                    </motion.span>
-                    <motion.h2
-                      className="text-5xl text-white md:text-5xl font-bold"
-                      initial={{ opacity: 0, y: -30 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.4 }}
-                    >
-                      My Projects
-                    </motion.h2>
+    <div className="font-[sora] py-10 px-4 sm:px-6 lg:px-8" id="project">
+      <div
+        className="flex flex-col justify-center gap-4 items-center font-[Suse] font-extrabold mt-6"
+        id="about"
+      >
+        <div className="text-center mb-8 mt-10 font-[sora]">
+          <motion.span
+            className="text-xs font-semibold bg-gray-800 text-white  px-3 py-1 rounded-full mb-2 inline-block"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+          >
+            💪what i have build
+          </motion.span>
+          <motion.h2
+            className="text-5xl text-white md:text-5xl font-bold"
+            initial={{ opacity: 0, y: -30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+          >
+            My Projects
+          </motion.h2>
         </div>
-        </div>
-      <div className="max-w-7xl mx-auto">
+      </div>
+      <div className="lg:flex lg:justify-between w-full lg:items-center mx-auto">
         {projects.map((project, index) => (
           <motion.div
             key={index}
-            className="bg-white p-6 rounded-lg shadow-md mb-8 border border-gray-200"
+            className="bg-white p-6 rounded-lg mx-auto shadow-md mb-8 border border-gray-200 md:w-110 h-120 md:h-100"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: index * 0.2 }}
@@ -133,28 +136,28 @@ const ProjectCard = () => {
             <img
               src={project.image}
               alt={project.title}
-              className="w-full mx-auto h-full object-cover rounded-md mb-4"
+              className="w-full  object-cover rounded-md mb-4"
             />
-            <h3 className="text-2xl font-bold text-gray-800 mb-2">
+            <h3 className="text-xl font-bold text-gray-800 mb-2">
               {project.title}
             </h3>
-            <p className="text-gray-600 mb-4">{project.description}</p>
+            <p className="text-gray-600 mb-4 text-xs">{project.description}</p>
             <div className="md:flex  space-x-4">
               <button
                 onClick={() => setSelectedProject(project)}
-                className="btn bg-blue-600 text-white hover:bg-blue-700"
+                className="btn bg-purple-600 text-white hover:bg-purple-800"
               >
                 View Details
               </button>
               <a
                 href={project.demoLink}
-                className="btn bg-green-600 text-white hover:bg-green-700"
+                className="btn bg-purple-600 text-white hover:bg-purple-800"
               >
                 Live Demo
               </a>
               <a
                 href={project.githubLink}
-                className="btn bg-gray-600 text-white hover:bg-gray-700"
+                className="btn bg-purple-600 text-white hover:bg-purple-800"
               >
                 GitHub
               </a>
@@ -166,10 +169,7 @@ const ProjectCard = () => {
       {/* Modal with Blurred Background */}
       {selectedProject && (
         <div className="fixed inset-0  bg-opacity-50 backdrop-blur-sm flex items-center justify-center z-150 overflow-y-scroll text-xs">
-          <div
-            
-            className="bg-gray-900 text-white py-2 px-6 rounded-xl w-full max-w-xl shadow-lg overflow-y-auto"
-          >
+          <div className="bg-gray-900 text-white py-2 px-6 rounded-xl w-full max-w-xl shadow-lg overflow-y-auto">
             <button
               onClick={() => setSelectedProject(null)}
               className="absolute top-4 right-4 text-white text-2xl"
