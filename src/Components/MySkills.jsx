@@ -176,7 +176,7 @@ const Skill = () => {
   };
 
   return (
-    <div id="skills" className="py-16 px-4 sm:px-6 lg:px-[12%] min-h-screen">
+    <div id="skill" className="py-16 px-4 sm:px-6 lg:px-[12%] min-h-screen">
       <motion.div
         ref={ref}
         variants={containerVariants}

@@ -7,35 +7,33 @@ const ProjectCard = () => {
 
   const projects = [
     {
-      title: 'QuickLance-A freelance platform',
+      title: 'FitForge- A Fitness Platform',
       description:
-        'QuickLance is a freelance service platform where users can browse freelancers, add services, and manage them. This is the frontend of the project built using React and Tailwind CSS.',
-      image: 'https://i.ibb.co/Rp0Rfh1G/Quick-Lance.png',
-      detailsLink: '#',
-      demoLink: 'https://quicklance-e9af0.web.app/',
+        'FitForge – Full-Stack Fitness Platform Empowered by Stripe payments, Firebase authentication, and an admin dashboard for trainer and user management.',
+      image: 'https://i.ibb.co/bg0yY1Wv/fitforge.png',
+      demoLink: 'https://fitforge-5c5d1.web.app/',
       githubLink: 'https://github.com/abedinalways/QuickLance-Client',
       modalContent: {
-        bannerImage: 'https://i.ibb.co/Rp0Rfh1G/Quick-Lance.png',
+        bannerImage:
+          'https://i.ibb.co/rG9Y3bgK/Screenshot-2025-07-16-232702.png',
         techStack: [
           'React',
-          'React-router',
-          'Tanstack query',
-          'TailwindCSS',
+          'Stripe',
+          'Dashboard',
           'Firebase',
-          'Express Js',
-          'Node js',
+          'Admin Panel',
           'MongoDB',
         ],
         description:
-          'QuickLance is a freelance service platform where users can browse freelancers, add services, and manage them. This is the frontend of the project built using React and Tailwind CSS.',
+          'The frontend of FitForge, a fitness platform, provides a responsive and user-friendly interface for members to apply as trainers, booking trainer, payment by Stripe, view their application status, and interact with fitness-related features. ',
         challenges: [
-          'Managing freelancer listings',
-          'Ensuring real-time updates',
-          'Responsive design',
-          'Integrating Firebase authentication securely',
+          'One Dashboard for Different users-Admin, Trainer, Member',
+          'Payment Gateway By Stripe',
+          'Trainer application for general people',
+          'Integrating Firebase, pagination in all pages',
         ],
         futureImprovements: [
-          'Add payment integration',
+          'improve backend funtionality',
           'Enhance search functionality',
         ],
       },
@@ -56,7 +54,7 @@ const ProjectCard = () => {
           'Context API',
           'JWT',
           'Express Js',
-          'MongoDB'
+          'MongoDB',
         ],
         description:
           'About This is the frontend for the StackMind Web Blog platform, built with React. It provides a responsive user interface to browse blogs, post content, manage user accounts, and interact with the backend APIs.',
