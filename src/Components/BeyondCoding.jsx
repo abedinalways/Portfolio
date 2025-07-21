@@ -59,7 +59,7 @@ const BeyondCoding = () => {
 
         {/* Right Section */}
         <motion.div
-          className="w-full lg:w-1/2 bg-black p-6 rounded-xl shadow-lg"
+          className="w-full lg:w-1/2 bg-black p-6 rounded-xl shadow-lg border border-gray-400"
           initial={{ opacity: 0, x: 100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, ease: 'easeOut', delay: 0.2 }}

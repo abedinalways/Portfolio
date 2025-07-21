@@ -1,218 +1,312 @@
-import { motion } from 'framer-motion';
-import { useState } from 'react';
-import { VscVscode } from 'react-icons/vsc';
-const skillCategories = [
-  {
-    title: 'Frontend',
-    seeMoreCount: 2,
-    skills: [
-      {
-        name: 'React',
-        percentage: 85,
-        level: 'Expert Level',
-        description: 'Advanced proficiency',
-        icon: 'react-native',
-        color: 'from-blue-500 to-purple-500',
-      },
-      {
-        name: 'JavaScript',
-        percentage: 90,
-        level: 'Expert Level',
-        description: 'Master level expertise',
-        icon: 'javascript',
-        color: 'from-yellow-400 to-yellow-600',
-      },
-      {
-        name: 'Tailwind CSS',
-        percentage: 88,
-        level: 'Expert Level',
-        description: 'Advanced proficiency',
-        icon: 'tailwindcss',
-        color: 'from-cyan-400 to-blue-500',
-      },
-      {
-        name: 'Bootstrap',
-        percentage: 80,
-        level: 'Expert Level',
-        description: 'Strong layout knowledge',
-        icon: 'bootstrap',
-        color: 'from-purple-500 to-pink-500',
-      },
-      {
-        name: 'HTML/CSS',
-        percentage: 95,
-        level: 'Expert Level',
-        description: 'Solid semantic markup skills',
-        icon: 'html-5',
-        color: 'from-orange-500 to-red-500',
-      },
-    ],
-  },
-  {
-    title: 'Backend',
-    seeMoreCount: 2,
-    skills: [
-      {
-        name: 'Node.js',
-        percentage: 80,
-        level: 'Expert Level',
-        description: 'Advanced proficiency',
-        icon: 'nodejs',
-        color: 'from-green-400 to-lime-500',
-      },
-      {
-        name: 'Express.js',
-        percentage: 75,
-        level: 'Expert Level',
-        description: 'Strong working knowledge',
-        icon: 'express',
-        color: 'from-gray-400 to-gray-600',
-      },
-      {
-        name: 'MongoDB',
-        percentage: 70,
-        level: 'Expert Level',
-        description: 'Strong working knowledge',
-        icon: 'mongodb',
-        color: 'from-green-500 to-emerald-600',
-      },
-      {
-        name: 'MySQL',
-        percentage: 72,
-        level: 'Advanced',
-        description: 'Relational DB experience',
-        icon: 'mysql-logo',
-        color: 'from-blue-600 to-blue-400',
-      },
-    ],
-  },
-  {
-    title: 'Tools & Others',
-    seeMoreCount: 3,
-    skills: [
-      {
-        name: 'VS Code',
-        percentage: 95,
-        level: 'Expert Level',
-        description: 'Master level expertise',
-        icon: 'visual-studio-code-2019',
-        color: 'from-indigo-400 to-indigo-600',
-      },
-      {
-        name: 'Git',
-        percentage: 78,
-        level: 'Expert Level',
-        description: 'Strong working knowledge',
-        icon: 'git',
-        color: 'from-red-400 to-red-600',
-      },
-      {
-        name: 'Coursera AI',
-        percentage: 85,
-        level: 'Expert Level',
-        description: 'Advanced proficiency',
-        icon: 'ai',
-        color: 'from-pink-500 to-purple-600',
-      },
-      {
-        name: 'Figma',
-        percentage: 75,
-        level: 'Intermediate',
-        description: 'UI/UX design collaboration',
-        icon: 'figma',
-        color: 'from-pink-400 to-orange-400',
-      },
-    ],
-  },
-];
+import React, { useState, useEffect, useRef } from 'react';
+import { motion, useInView, useAnimation } from 'framer-motion';
+import {
+  Chart as ChartJS,
+  ArcElement,
+  Tooltip,
+  Legend,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+} from 'chart.js';
+import { Doughnut, Bar } from 'react-chartjs-2';
 
-const MySkills = () => {
-  const [expanded, setExpanded] = useState({});
+ChartJS.register(
+  ArcElement,
+  Tooltip,
+  Legend,
+  CategoryScale,
+  LinearScale,
+  BarElement
+);
 
-  const toggleExpand = title => {
-    setExpanded(prev => ({ ...prev, [title]: !prev[title] }));
+const Skill = () => {
+  const [activeTab, setActiveTab] = useState('frontend');
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, threshold: 0.1 });
+  const mainControls = useAnimation();
+
+  useEffect(() => {
+    if (inView) {
+      setIsVisible(true);
+      mainControls.start('visible');
+    }
+  }, [inView, mainControls]);
+
+  const skillsData = {
+    frontend: {
+      title: 'Frontend Development',
+      icon: '🎨',
+      skills: [
+        { name: 'React.js', level: 90, color: '#61DAFB' },
+        { name: 'Next.js', level: 85, color: '#455FDB' },
+        { name: 'JavaScript', level: 88, color: '#F7DF1E' },
+        { name: 'Tailwind CSS', level: 92, color: '#06B6D4' },
+        { name: 'HTML/CSS', level: 95, color: '#E34F26' },
+      ],
+    },
+    backend: {
+      title: 'Backend Development',
+      icon: '⚙️',
+      skills: [
+        { name: 'Node.js', level: 85, color: '#339933' },
+        { name: 'Express.js', level: 82, color: '#443299' },
+        { name: 'MongoDB', level: 80, color: '#47A248' },
+        { name: 'MySQL', level: 70, color: '#336791' },
+        { name: 'RESTful APIs', level: 88, color: '#FF6B6B' },
+        { name: 'Authentication', level: 85, color: '#4ECDC4' },
+      ],
+    },
+    tools: {
+      title: 'Tools & Others',
+      icon: '🛠️',
+      skills: [
+        { name: 'Git/GitHub', level: 90, color: '#FFC300' },
+        { name: 'VS Code', level: 95, color: '#007ACC' },
+        { name: 'Figma', level: 75, color: '#f10400' },
+        { name: 'Postman', level: 85, color: '#FF6C37' },
+        { name: 'Vercel', level: 80, color: '#DAF7A6' },
+        { name: 'Docker', level: 60, color: '#2496ED' },
+      ],
+    },
+  };
+
+  const createChartData = skills => ({
+    labels: skills.map(skill => skill.name),
+    datasets: [
+      {
+        data: skills.map(skill => skill.level),
+        backgroundColor: skills.map(skill => skill.color + '20'),
+        borderColor: skills.map(skill => skill.color),
+        borderWidth: 2,
+        hoverBackgroundColor: skills.map(skill => skill.color + '40'),
+        hoverBorderWidth: 3,
+      },
+    ],
+  });
+
+  const chartOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        display: false,
+      },
+      tooltip: {
+        backgroundColor: 'rgba(0, 0, 0, 0.8)',
+        titleColor: '#fff',
+        bodyColor: '#fff',
+        borderColor: '#fff',
+        borderWidth: 1,
+        callbacks: {
+          label: function (context) {
+            return `${context.label}: ${context.parsed}%`;
+          },
+        },
+      },
+    },
+  };
+
+  const barChartData = {
+    labels: skillsData[activeTab].skills.map(skill => skill.name),
+    datasets: [
+      {
+        label: 'Proficiency Level',
+        data: skillsData[activeTab].skills.map(skill => skill.level),
+        backgroundColor: skillsData[activeTab].skills.map(
+          skill => skill.color + '30'
+        ),
+        borderColor: skillsData[activeTab].skills.map(skill => skill.color),
+        borderWidth: 2,
+        borderRadius: 8,
+        borderSkipped: false,
+      },
+    ],
+  };
+
+  const barOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        backgroundColor: 'rgba(0, 0, 0, 0.8)',
+        titleColor: '#fff',
+        bodyColor: '#fff',
+        callbacks: {
+          label: function (context) {
+            return `${context.parsed.y}% proficiency`;
+          },
+        },
+      },
+    },
+    scales: {
+      y: {
+        beginAtZero: true,
+        max: 100,
+        grid: { color: 'rgba(255, 255, 255, 0.1)' },
+        ticks: { color: '#fff' },
+      },
+      x: {
+        grid: { display: false },
+        ticks: { color: '#fff', maxRotation: 45 },
+      },
+    },
+  };
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 0.6,
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.6 },
+    },
   };
 
   return (
-    <div className="font-[sora] min-h-screen text-white py-12 px-6" id='skill'>
-      <div className="text-center mb-12">
-        <motion.span
-          className="text-xs font-semibold bg-gray-800 px-3 py-1 rounded-full mb-2 inline-block"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-        >
-          Technologies I Master
-        </motion.span>
-        <motion.h2
-          className="text-4xl md:text-5xl font-bold"
-          initial={{ opacity: 0, y: -30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
-        >
-          My Technical Skills & Expertise
-        </motion.h2>
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-        {skillCategories.map((cat, i) => {
-          const visibleSkills = expanded[cat.title]
-            ? cat.skills
-            : cat.skills.slice(0, 3);
+    <div id="skills" className="py-16 px-4 sm:px-6 lg:px-[12%] min-h-screen">
+      <motion.div
+        ref={ref}
+        variants={containerVariants}
+        initial="hidden"
+        animate={mainControls}
+        className="max-w-7xl mx-auto"
+      >
+        {/* Header */}
+        <motion.div variants={itemVariants} className="text-center mb-12">
+          <small className="text-white font-semibold tracking-wider uppercase text-xs">
+            Technical Expertise
+          </small>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-[SUSE] mt-2 mb-4 text-white bg-clip-text text-transparent">
+            My Technical Skills & Expertise
+          </h2>
+          <p className="text-gray-300 font-[Raleway] text-lg max-w-2xl mx-auto">
+            Proficient in modern web technologies with hands-on experience in
+            building scalable applications
+          </p>
+        </motion.div>
 
-          return (
-            <motion.div
-              key={i}
-              className="bg-[#111] rounded-xl p-6 shadow-xl flex flex-col"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.2 }}
-              viewport={{ once: true }}
+        {/* Tab Navigation */}
+        <motion.div
+          variants={itemVariants}
+          className="flex flex-col sm:flex-row justify-center mb-10 gap-4"
+        >
+          {Object.entries(skillsData).map(([key, data]) => (
+            <motion.button
+              key={key}
+              onClick={() => setActiveTab(key)}
+              className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 flex items-center gap-2 ${
+                activeTab === key
+                  ? 'bg-purple-600 text-white shadow-lg shadow-purple-600/30'
+                  : 'bg-gray-800 text-gray-300 hover:bg-gray-700 hover:text-white shadow-md'
+              }`}
+              whileHover={{ y: -2, scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
             >
-              <h3 className="text-xl text-blue-300 font-semibold mb-6 text-center">
-                {cat.title}
-              </h3>
-              {visibleSkills.map((skill, j) => (
-                <div key={j} className="mb-5 bg-[#1a1a1a] p-4 rounded-lg">
-                  <div className="flex justify-between mb-2">
-                    <div className="flex items-center gap-2">
-                      <img
-                        src={`https://img.icons8.com/color/24/${skill.icon}.png`}
-                        alt={skill.name}
-                        className="w-5 h-5"
-                      />
-                      <span className="font-medium text-sm">{skill.name}</span>
-                    </div>
-                    <span className="text-sm text-gray-400">
-                      {skill.percentage}%
+              <span className="text-xl">{data.icon}</span>
+              <span className="hidden sm:inline">{data.title}</span>
+              <span className="sm:hidden">{key}</span>
+            </motion.button>
+          ))}
+        </motion.div>
+
+        {/* Skills Content */}
+        <motion.div
+          key={activeTab}
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+          className="grid lg:grid-cols-2 gap-8 lg:gap-12 "
+        >
+          {/* Skills List */}
+          <div className="space-y-6 ">
+            <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
+              <span className="text-3xl">{skillsData[activeTab].icon}</span>
+              {skillsData[activeTab].title}
+            </h3>
+
+            <div className="space-y-4">
+              {skillsData[activeTab].skills.map((skill, index) => (
+                <motion.div
+                  key={skill.name}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: index * 0.1, duration: 0.5 }}
+                  className="bg-black border border-gray-400 rounded-xl p-4 shadow-md hover:shadow-lg transition-shadow duration-300 "
+                >
+                  <div className="flex justify-between items-center mb-2 ">
+                    <span className="font-semibold text-white">
+                      {skill.name}
+                    </span>
+                    <span className="text-sm font-bold text-purple-400">
+                      {skill.level}%
                     </span>
                   </div>
-                  <div className="w-full bg-gray-800 h-2 rounded-full overflow-hidden">
+                  <div className="w-full bg-gray-700 rounded-full h-2">
                     <motion.div
-                      className={`h-2 rounded-full bg-gradient-to-r ${skill.color}`}
+                      className="h-2 rounded-full"
+                      style={{ backgroundColor: skill.color }}
                       initial={{ width: 0 }}
-                      whileInView={{ width: `${skill.percentage}%` }}
-                      transition={{ duration: 1 }}
+                      animate={{ width: isVisible ? `${skill.level}%` : 0 }}
+                      transition={{ delay: index * 0.1 + 0.5, duration: 1 }}
                     />
                   </div>
-                  <p className="text-xs text-gray-400 mt-1">
-                    {skill.description}
-                  </p>
-                </div>
+                </motion.div>
               ))}
-              <button
-                onClick={() => toggleExpand(cat.title)}
-                className="mt-auto bg-purple-800 hover:bg-purple-600 text-white text-sm py-2 rounded-full"
-              >
-                {expanded[cat.title]
-                  ? 'See Less'
-                  : `See More (+${cat.seeMoreCount})`}
-              </button>
+            </div>
+          </div>
+
+          {/* Charts */}
+          <div className="space-y-8 ">
+            {/* Doughnut Chart */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.3, duration: 0.6 }}
+              className="bg-black border border-gray-400 rounded-2xl p-6 shadow-xl "
+            >
+              <h4 className="text-xl font-bold text-center mb-4 text-white">
+                Skills Overview
+              </h4>
+              <div className="h-52 relative">
+                <Doughnut
+                  data={createChartData(skillsData[activeTab].skills)}
+                  options={chartOptions}
+                />
+              </div>
             </motion.div>
-          );
-        })}
-      </div>
+
+            {/* Bar Chart */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.5, duration: 0.6 }}
+              className="bg-black border border-gray-400 rounded-2xl p-6 shadow-xl "
+            >
+              <h4 className="text-xl font-bold text-center mb-4 text-white">
+                Proficiency Levels
+              </h4>
+              <div className="h-52">
+                <Bar data={barChartData} options={barOptions} />
+              </div>
+            </motion.div>
+          </div>
+        </motion.div>
+      </motion.div>
     </div>
   );
 };
 
-export default MySkills;
+export default Skill;

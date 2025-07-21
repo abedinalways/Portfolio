@@ -20,7 +20,7 @@ const Home = () => {
       <BeyondCoding />
       <ProjectCard />
       <MySkills />
-      <Experience />
+      
       <Education />
       <Contact/>
     </div>

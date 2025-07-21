@@ -56,7 +56,7 @@ const Education = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: idx * 0.2 }}
               viewport={{ once: true }}
-              className="bg-[#111] border border-gray-800 rounded-xl shadow-lg p-6"
+              className="bg-[#111] border border-gray-400 rounded-xl shadow-lg p-6"
             >
               <div className="flex items-center justify-between mb-2">
                 <h3 className="text-xl font-semibold">

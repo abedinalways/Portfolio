@@ -56,8 +56,7 @@ const ProjectCard = () => {
           'Context API',
           'JWT',
           'Express Js',
-          'MongoDB',
-          'DaisyUI',
+          'MongoDB'
         ],
         description:
           'About This is the frontend for the StackMind Web Blog platform, built with React. It provides a responsive user interface to browse blogs, post content, manage user accounts, and interact with the backend APIs.',
@@ -123,11 +122,11 @@ const ProjectCard = () => {
           </motion.h2>
         </div>
       </div>
-      <div className="lg:flex lg:justify-between w-full lg:items-center mx-auto">
+      <div className="lg:flex lg:justify-center gap-4 w-full lg:items-center mx-auto">
         {projects.map((project, index) => (
           <motion.div
             key={index}
-            className="bg-white p-6 rounded-lg mx-auto shadow-md mb-8 border border-gray-200 md:w-110 h-120 md:h-100"
+            className="bg-black text-white p-6 rounded-lg mx-auto shadow-md mb-8 border border-gray-400 md:w-110 h-120 md:h-100"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: index * 0.2 }}
@@ -138,10 +137,10 @@ const ProjectCard = () => {
               alt={project.title}
               className="w-full  object-cover rounded-md mb-4"
             />
-            <h3 className="text-xl font-bold text-gray-800 mb-2">
+            <h3 className="text-xl font-bold text-gray-200 mb-2">
               {project.title}
             </h3>
-            <p className="text-gray-600 mb-4 text-xs">{project.description}</p>
+            <p className="text-gray-200 mb-4 text-xs">{project.description}</p>
             <div className="md:flex  space-x-4">
               <button
                 onClick={() => setSelectedProject(project)}
